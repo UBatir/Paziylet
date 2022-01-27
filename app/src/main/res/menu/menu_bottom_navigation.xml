@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeFragment"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home"/>
+    <item android:id="@+id/questionsFragment"
+        android:title="@string/questions"
+        android:icon="@drawable/ic_question"/>
+    <item android:id="@+id/namazwaqtiFragment"
+        android:title="@string/time_namaz"
+        android:icon="@drawable/ic_timenamaz"/>
+    <item android:id="@+id/categoryFragment"
+        android:title="@string/categories"
+        android:icon="@drawable/ic_categories"/>
+
+</menu>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.texnopos.paziylet.ui.news.NewsFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_homeFragment_to_newsWebViewFragment"
+            app:destination="@id/newsWebViewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_fivePillarsFragment"
+            app:destination="@id/fivePillarsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionsFragment"
+        android:name="uz.texnopos.paziylet.ui.questions.QuestionsFragment"
+        android:label="QuestionsFragment"
+        tools:layout="@layout/fragment_questions">
+        <action
+            android:id="@+id/action_questionsFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+        <action
+            android:id="@+id/action_questionsFragment_to_questionAnswerFragment"
+            app:destination="@id/questionAnswerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionCategoriesFragment"
+        android:name="uz.texnopos.paziylet.ui.questions.category.QuestionCategoriesFragment"
+        android:label="QuestionCategoriesFragment"
+        tools:layout="@layout/fragment_questions_categories">
+        <action
+            android:id="@+id/action_questionCategoriesFragment_to_questionFragment"
+            app:destination="@id/questionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="uz.texnopos.paziylet.ui.questions.question.QuestionFragment"
+        android:label="QuestionFragment"
+        tools:layout="@layout/fragment_question">
+        <action
+            android:id="@+id/action_questionFragment_to_questionAnswerFragment"
+            app:destination="@id/questionAnswerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionAnswerFragment"
+        android:name="uz.texnopos.paziylet.ui.questions.question_asnwer.QuestionAnswerFragment"
+        android:label="QuestionAnswerFragment"
+        tools:layout="@layout/fragment_question_answer" />
+    <fragment
+        android:id="@+id/namazwaqtiFragment"
+        android:name="uz.texnopos.paziylet.ui.praytime.PrayTimeFragment"
+        android:label="NamazwaqtiFragment"
+        tools:layout="@layout/fragment_pray_time">
+        <action
+            android:id="@+id/action_namazwaqtiFragment_to_compassFragment"
+            app:destination="@id/compassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/compassFragment"
+        android:name="uz.texnopos.paziylet.ui.compass.CompassFragment"
+        android:label="CompassFragment"
+        tools:layout="@layout/fragment_compass" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="uz.texnopos.paziylet.ui.signin.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/activity_auth" />
+    <fragment
+        android:id="@+id/myQuestionsFragment"
+        android:name="uz.texnopos.paziylet.ui.questions.myQuestions.MyQuestionsFragment"
+        android:label="MyQuestionsFragment"
+        tools:layout="@layout/fragment_my_questions">
+        <action
+            android:id="@+id/action_myQuestionsFragment_to_questionAnswerFragment"
+            app:destination="@id/questionAnswerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        tools:layout="@layout/fragment_category"
+        android:name="uz.texnopos.paziylet.ui.categories.CategoryFragment"
+        android:label="CategoryFragment" >
+        <action
+            android:id="@+id/action_categoryFragment_to_definiteCategory"
+            app:destination="@id/definiteCategory" />
+        <argument
+            android:name="path"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newsWebViewFragment"
+        android:name="uz.texnopos.paziylet.ui.news.NewsWebViewFragment"
+        android:label="NewsWebViewFragment"
+        tools:layout="@layout/news_web_view_fragment">
+        <argument
+            android:name="objectToJson"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/definiteCategory"
+        android:name="uz.texnopos.paziylet.ui.categories.definitecategory.DefiniteCategoryFragment"
+        android:label="DefiniteCategory" >
+        <argument
+            android:name="path"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_definiteCategory_to_webViewFragment"
+            app:destination="@id/webViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="uz.texnopos.paziylet.ui.categories.post.WebViewFragment"
+        android:label="WebViewFragment" >
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <argument
+            android:name="path"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fivePillarsWebViewFragment"
+        tools:layout="@layout/fivepillars_web_view_fragment"
+        android:name="uz.texnopos.paziylet.ui.fivePillars.post.FivePillarsWebViewFragment"
+        android:label="FivePillarsWebViewFragment">
+        <argument
+            android:name="text"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fivePillarsFragment"
+        android:name="uz.texnopos.paziylet.ui.fivePillars.FivePillarsFragment"
+        android:label="FivePillarsFragment"
+        tools:layout="@layout/five_pillars_fragment"
+        >
+        <action
+            android:id="@+id/action_fivePillarsFragment_to_fivePillarsWebViewFragment"
+            app:destination="@id/fivePillarsWebViewFragment" />
+        <argument
+            android:name="text"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>
